@@ -19,6 +19,7 @@ public class PatientAddress {
 	@JsonProperty(value = "zipCode")
 	private Long zipcode;
 
+
 	public String getLine1() {
 		return line1;
 	}
