@@ -1,19 +1,25 @@
 package com.test.specialty.patient.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
+import com.test.specialty.patient.dao.PatientDao;
 import com.test.specialty.patient.model.Patient;
 import com.test.specialty.patient.model.PatientAddress;
 import com.test.specialty.patient.service.PatientService;
 
 @Repository
 public class PatientServiceImpl implements PatientService {
-
+	
+	@Autowired
+	PatientDao patientDao;
+	
 	@Override
 	public Patient getPatientDetails(Long patientId) {
 		// TODO Auto-generated method stub
-		Patient patient = createPatient(patientId);
+		Patient patient = patientDao.getPatientDetails(patientId);
+		//Patient patient1 = createPatient(patientId);
 		return patient;
 	}
 
